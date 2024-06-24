@@ -1,0 +1,14 @@
+<p>
+  <strong id="count">{{ countSer.count }}</strong>
+</p>
+
+<p>
+  <input #inputReset type="number" id="reset-input" />
+  <button (click)="countSer.reset(inputReset.value)" id="reset-btn">
+    Reset
+  </button>
+  <br />
+
+  <button (click)="countSer.increment()" id="increment-btn">+</button>
+  <button (click)="countSer.decrement()" id="decrement-btn">-</button>
+</p>

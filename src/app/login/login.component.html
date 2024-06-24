@@ -1,0 +1,42 @@
+<h1 id="welcome">@if(userSer.isLogged){User Logged} @else {User Not Logged}</h1>
+
+@if(userSer.isLogged){
+
+<div>
+  <p id="user-name">Hello, {{ userSer.user.name }}</p>
+</div>
+
+<button id="btn" (click)="userSer.logout()">Logout</button>
+
+} @else{
+<div>
+  <p id="login-msg">please Log in first</p>
+</div>
+
+<button id="btn" (click)="userSer.login()">Sign in</button>
+
+}
+
+<!-- Cypress -->
+<!-- <h1 id="welcome">@if(userSer.isLogged){User Logged} @else {User Not Logged}</h1>
+
+@if(userSer.isLogged){
+
+<div>
+  <p id="user-name">Hello, {{ userSer.user.name }}</p>
+</div>
+<div id="list-users">
+  @for (item of users | async; track $index) {
+  <p id="{{ 'u' + $index }}">User {{ $index }} : {{ item["name"] }}</p>
+  }
+</div>
+<button id="btn" (click)="userSer.logout()">Logout</button>
+
+} @else{
+<div>
+  <p id="login-msg">please Log in first</p>
+</div>
+
+<button id="btn" (click)="userSer.login()">Sign in</button>
+
+} -->
