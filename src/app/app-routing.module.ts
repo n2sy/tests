@@ -8,4 +8,4 @@ let routes: Routes = [
   { path: 'counter', component: CounterComponent },
 ];
 
-export const ROUTING = RouterModule.forRoot(routes);
+export const ROUTING = RouterModule.forRoot(routes, { useHash: true });
