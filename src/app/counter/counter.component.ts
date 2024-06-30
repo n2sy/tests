@@ -7,7 +7,17 @@ import { CounterService } from '../services/counter.service';
   styleUrl: './counter.component.css',
 })
 export class CounterComponent {
+  data;
   constructor(public countSer: CounterService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.countSer
+      .getData()
+      .then((response) => {
+        this.data = response;
+      })
+      .catch((err) => {
+        this.data = err.toString();
+      });
+  }
 }
